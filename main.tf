@@ -16,9 +16,9 @@ terraform {
         profile = "s3-unifique"
     }
     required_providers {
-    aws = {
-      version = "~> 2.0"
-      source = "hashicorp/aws"
+        aws = {
+            version = "~> 2.0"
+            source = "hashicorp/aws"
+        }
     }
-   }
 }
