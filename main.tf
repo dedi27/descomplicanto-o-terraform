@@ -4,7 +4,6 @@ provider "aws" {
     profile = "giropops"
 }
 
-
 terraform {
     backend "s3" {
         bucket = "terraform-jardel"
