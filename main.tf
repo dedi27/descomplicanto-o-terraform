@@ -4,6 +4,13 @@ provider "aws" {
     profile = "giropops"
 }
 
+provider "aws" {
+    region = "us-east-1"
+    shared_credentials_file = "~/.aws/credentials"
+    profile = "giropops"
+    alias = "us1"
+}
+
 terraform {
     backend "s3" {
         bucket = "terraform-jardel"
