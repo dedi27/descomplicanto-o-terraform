@@ -1,11 +1,12 @@
 provider "aws" {
-    region = "us-east-1"
+    #region = "us-east-1"
+    region = "${terraform.workspace == "production" ? "us-east-1" : "us-east-2"}"
     shared_credentials_file = "~/.aws/credentials"
     profile = "giropops"
 }
 
 provider "aws" {
-    region = "us-east-1"
+    region = "${terraform.workspace == "production" ? "us-east-1" : "us-east-2"}"
     shared_credentials_file = "~/.aws/credentials"
     profile = "giropops"
     alias = "us1"
@@ -20,6 +21,7 @@ terraform {
         skip_credentials_validation = true
         shared_credentials_file = "~/.aws/credentials"
         profile = "s3-unifique"
+        encrypt = true
     }
     required_providers {
         aws = {
