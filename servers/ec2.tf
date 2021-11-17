@@ -10,9 +10,6 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  #count = var.environment == "production" ? 2 + var.plus : 1
-  #count = var.servers
-  #ami           = "ami-09e67e426f25ce0d7"
   count = var.production ? 2 + var.plus : 1
   ami = data.aws_ami.ubuntu.id
   instance_type = count.index < 1 ? "t2.micro" : "t3.medium"
