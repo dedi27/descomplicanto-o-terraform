@@ -12,3 +12,15 @@ variable "image_id" {
 variable "servers" {
   
 }
+
+variable "environment" {
+  default = "staging"
+}
+
+variable "production" {
+  default = true
+}
+
+variable "plus" {
+  default = 1
+}
