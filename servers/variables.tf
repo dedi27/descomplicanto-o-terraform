@@ -23,4 +23,11 @@ variable "production" {
 
 variable "plus" {
   default = 1
+  type = number
+}
+
+variable instance_type {
+  type = list(string)
+  default = ["t2.micro", "t3.medium"]
+  description = "The type of server to create."
 }
