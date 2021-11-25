@@ -31,3 +31,12 @@ variable instance_type {
   default = ["t2.micro", "t3.medium"]
   description = "The type of server to create."
 }
+
+variable blocks {
+  type        = list(object({
+    device_name = string
+    volume_size = string
+    volume_type = string
+  }))
+  description = "List of EBS Blocks."
+}
