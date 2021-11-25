@@ -1,6 +1,7 @@
 module "servers" {
     source = "./servers"
-    servers = 2
+    servers = 1
+    blocks =  var.blocks
     providers = {
       aws = aws.us1
      }

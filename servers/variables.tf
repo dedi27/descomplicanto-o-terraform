@@ -40,3 +40,8 @@ variable blocks {
   }))
   description = "List of EBS Blocks."
 }
+
+variable "name" {
+  type =  string
+  default = "teste"
+}

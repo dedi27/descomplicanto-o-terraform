@@ -24,6 +24,6 @@ resource "aws_instance" "web" {
   }
 
   tags = {
-    Name = "HelloWorld"
+    Name = "HelloWorld, %{ if var.name == "gomex"}${var.name}%{ else }nao valeu%{ endif }}"
   }
 }
